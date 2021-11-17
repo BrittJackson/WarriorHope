@@ -1,0 +1,29 @@
+extends layout
+
+block landing 
+  div(style="position: relative;")
+    img(src="images/hope.jpg" class="img-fluid w-100" style="max-height: 500px; object-fit: cover;" alt="Responsive image")
+
+    div(class="yellow-separation" style="margin-bottom: 20px;")
+
+block content
+  div(class="container-fluid")
+    div(class="container")
+      div(class="input-container" style="text-align:center")
+        div(class="form-box p-3")
+          div(class="form-row")
+            div(class="form-group col-lg-12")
+              h1 #{title}
+              p Military service can have significant impacts to service members mental health.  Warrior Hope is a confidential and safe tool that connects service members with other service members.
+              p Warrior Hope is a free application that uses live chat and forum based communications with small mutual support groups. Users remain anonymous and identity remains private and secure. At Warrior Hope, your data will not be sold to third-party orginaztions and we do not require use of camera, microphone, or location. Active duty, reservists, and veterans are free to discuss their concerns with mental health without fear of reprisal or social stigma.
+              p More information can be found in our #[a(href="/terms" target="_blank") Terms of Service]
+          div(class="form-row")
+            div(class="form-group col-lg-12")
+              a(href="/signin")
+                div(class="btn btn-primary-90") Login
+                //- img(alt="Login" src="images/loginBtn.png")
+          div(class="form-row")
+            div(class="form-group col-lg-12")
+              a(href="/registration")
+                div(class="btn btn-primary-90") Register
+                //- img(alt="Register" src="images/registerBtn.png") 

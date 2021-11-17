@@ -1,0 +1,50 @@
+extends ../layout
+
+block append scripts 
+  link(rel='stylesheet' href='stylesheets/chatStyle.css')
+
+block landing 
+  div
+
+block content
+  div(class="container-fluid" style="height:100%")
+    div(class="container" style="height:100%")
+
+      header(class="chat-header")
+        h1(style="margin:0;") Live Chat
+
+      div(class="yellow-separation")
+
+      form(id="chatForm" action="")
+        main(class="chat-main")
+          div(class="chat-sidebar")
+            div(class="groupNum")
+              h5(class="h5-yellow")
+                i(class="fas fa-comments")
+                |  Group: 
+                span(id="room-name" style="color: var(--gray-light)") #{roomName}
+            h5(class="h5-yellow")
+              i(class="fas fa-star") 
+              |  Moderators
+            div(class="moderators" id="moderators")
+            h5(style="color: var(--gray-light);")
+              i(class="fas fa-users") 
+              |  Users
+            div(class="users" id="users")
+              
+
+          div(class="chat-messages")
+
+        div(class="yellow-separation")
+
+        div(class="chat-form-container")
+          div(class="chatForm")
+            div(class="input-group")
+              input(id="chatInput" type="text" placeholder="Enter Message" required autocomplete="off" class="form-control")
+              div(class="input-group-append")
+                button(class="btn btn-primary")
+                  i(class="fas fa-paper-plane")
+
+block append footScript 
+  script(src="/socket.io/socket.io.js")
+  script(src="js/chat/chat.js")

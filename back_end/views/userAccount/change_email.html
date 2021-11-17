@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Change Email Address</title>
+</head>
+
+<body>
+  <div class="input-container">
+    <h1 style="text-align:center;">Update Email Address</h1>
+    <form id="changeEmail" method="post" action="/changeEmail" onsubmit="emailMatch(this)">
+      <div class="container">
+        <div class="form-box" style="text-align:center;">
+          <label for="email"><b>New Email Address</b></label>
+          <input type="email" placeholder="xyz@example.com" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" required class="inputbox">
+          <label for="emailconfirm"><b>Confirm New Email Address</b></label>
+          <input type="email" placeholder="xyz@example.com" name="emailconfirm" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" required class="inputbox"><br><br>
+        </div>
+      </div>
+    <button type="submit" class="buttonbox3">Submit</button>
+    </form>
+  
+    <script>
+      function emailMatch(e) {
+        email = e.email.value;
+        emailConfirm = e.emailconfirm.value;
+        if (email != emailConfirm) {
+          alert("Email addresses do not match. Please re-enter email address.");
+          return false;
+        } else {
+          return true;
+        }
+      }
+
+  </script>
+</body>
+
+</html>

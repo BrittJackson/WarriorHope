@@ -1,0 +1,54 @@
+/*
+-------------
+User Database
+-------------
+*/
+#
+CREATE DATABASE User;
+USE User;
+#
+CREATE TABLE user (
+    userID int NOT NULL AUTO_INCREMENT,
+    groupID int, 
+    subgroupID int,
+    subgroupTemporary boolean NOT NULL DEFAULT 0,
+    username varchar(150) NOT NULL,
+    password varchar(150) NOT NULL,
+    email varchar(150) NOT NULL,
+    moderator boolean NOT NULL,
+    modCount int DEFAULT 0,
+    lastLogin dateTime,
+    warnings int NOT NULL,
+    banned boolean NOT NULL,
+    PRIMARY KEY (userID)
+);
+#
+CREATE TABLE discussion_group (
+    groupID int NOT NULL,
+    subgroupID int NOT NULL AUTO_INCREMENT,
+    modID int NOT NULL,
+    userCount int DEFAULT 0,
+    PRIMARY KEY (subgroupID),
+    FOREIGN KEY (modID) REFERENCES user (userID)
+);
+#
+CREATE TABLE live_chat_messages (
+    messageID int NOT NULL AUTO_INCREMENT,
+    userID int NOT NULL,
+    roomID int NOT NULL,
+    timestamp datetime NOT NULL,
+    visible boolean NOT NULL,
+    message varchar(2000) NOT NULL,
+    PRIMARY KEY (messageID),
+    FOREIGN KEY (userID) REFERENCES user (userID) ON DELETE NO ACTION ON UPDATE NO ACTION
+);
+#
+CREATE TABLE live_chat_reports (
+    messageID int NOT NULL,
+    userID int NOT NULL,
+    reason varchar(1000) NULL,
+    resolved boolean NOT NULL,
+    PRIMARY KEY (messageID, userID),
+    FOREIGN KEY (messageID) REFERENCES live_chat_messages (messageID) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    FOREIGN KEY (userID) REFERENCES user (userID) ON DELETE NO ACTION ON UPDATE NO ACTION
+);

@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+  div(class="container-fluid")
+    div(class="container " style="text-align:center")
+      div(class="input-container p-3")
+        h1 Volunteer Application
+        p We are looking for volunteers who would be interested in being discussion group moderators for Warrior Hope.  You would be tasked with mediating the live chat and forums for one or more groups.  While not necessary, we ask that you have some experience with the military and how it operates.  If you are interested, please enter your information in the form below and we will contact you.
+        form(id="volunteerApplication" method="post")
+          div(class="form-box")
+            div(class="form-row")
+              div(class="form-group col-lg-12")
+                div(class="input-group")
+                  div(class="input-group-prepend")
+                    span(class="input-group-text bg-primary boo text-dark") name
+                  input(type="text" name="name" pattern="^[a-zA-Z0-9]{1,100}$" class="form-control")
+            div(class="form-row")
+              div(class="form-group col-lg-12")
+                div(class="input-group")
+                  div(class="input-group-prepend")
+                    span(class="input-group-text bg-primary boo text-dark") email
+                  input(type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" class="form-control")
+            div(class="form-row")
+              div(class="form-group col-lg-12")
+                div(class="input-group")
+                  div(class="input-group-prepend")
+                    span(class="input-group-text bg-primary boo text-dark") comments
+                  textarea(rows="6" cols="60" name="comments" class="form-control")
+            div(class="form-row")
+              div(class="form-group col-lg-12")
+                input(name="action" id="submitButton" type="submit" value="Submit" class="btn btn-success btn-block")
+      

@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= 'Simulated IDme' 
+  p Welcome to simulated IDme for application: #{local.client_id}
+  
+
+
+    h3= 'Verification'
+    form(name="verification", method="post")
+        div.input
+            span.label Username
+            input(type="text", name="username")
+        div.input
+            span.label Password 
+            input(type="password", name="password", default="", required)
+        div.actions
+            input(type="submit", value="Validate")
+    
+  p #{msg}
+  

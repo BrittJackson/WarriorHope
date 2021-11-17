@@ -1,0 +1,32 @@
+/*
+-------------------
+Assessment Database
+-------------------
+*/
+#
+CREATE DATABASE Assessment;
+USE Assessment;
+#
+CREATE TABLE assessment (
+    name varchar(100) NOT NULL,
+    assessmentID int NOT NULL,
+    score int NOT NULL,
+    PRIMARY KEY (assessmentID)
+);
+#
+CREATE TABLE question (
+    assessmentID int NOT NULL,
+    questionID int NOT NULL,
+    question varchar(500) NOT NULL,
+    PRIMARY KEY (questionID, assessmentID),
+    FOREIGN KEY (assessmentID) REFERENCES assessment (assessmentID)
+);
+#
+CREATE TABLE response (
+    assessmentID int NOT NULL,
+    responseID int NOT NULL,
+    value int NOT NULL,
+    response varchar(300) NOT NULL,
+    PRIMARY KEY (assessmentID, responseID),
+    FOREIGN KEY (assessmentID) REFERENCES assessment (assessmentID)
+);

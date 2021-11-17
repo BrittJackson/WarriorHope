@@ -1,0 +1,53 @@
+{
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc"]
+    },
+    "source": {
+        "include": ["package.json", "../idme/idnode/"],
+        "includePattern": ".js$",
+        "excludePattern": "(node_modules|docs)"
+    },
+    "plugins": [
+        "plugins/markdown"
+    ],
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": true,
+        "useLongnameInNav": false,
+        "showInheritedInNav": true
+    },
+    "opts": {
+        "destination": "./docs/",
+        "encoding": "utf8",
+        "private": true,
+        "recurse": true,
+        "template": "./node_modules/docdash"
+    },
+    "docdash": {
+        "static": [true],        
+        "sort": [false],           
+        "sectionOrder": [              
+             "Classes",
+             "Modules",
+             "Externals",
+             "Events",
+             "Namespaces",
+             "Mixins",
+             "Tutorials",
+             "Interfaces"
+        ],
+        "search": [true],
+        "navLevel": [4],  
+        "menu": {                       
+            "Project Website": {       
+                "href":"http://411crystal.cpi.cs.odu.edu:3000", 
+                "target":"_blank",
+                "class":"menu-item",
+                "id":"website_link"
+            }
+            
+        }
+        
+    }
+}

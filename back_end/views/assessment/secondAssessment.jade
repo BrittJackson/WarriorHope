@@ -1,0 +1,154 @@
+extends ../layout
+
+block append scripts
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+    script(type='text/javascript' src='js/processSecondaryAssessment.js')
+
+block content      
+    form#secondAssessment
+        div(class="container-fluid")
+            div(class="container")
+                // If there are no assessments to display
+                if typeof(assessment) == 'undefined'
+                    div(class="input-container text-center p-3 mb-3")
+                        h1 Instructions
+                        div(class="yellow-separation")
+                        div(class="form-row")
+                            div(class="form-group col-lg-12 p-3")
+                                span Based on your answers from the previous assessment, you do not need to take any secondary assessments.  Please click the submit button to continue.
+
+        
+                        
+                // Create a variable for question numbers
+                // The variable "i" created in the for loop starts at 0
+                // Pug/Jade is a template language and doesn't do computations well
+                - qNum = 1
+                - for (i in assessment){
+                    if assessment[i].questionID == 1
+                        - for (k in instruction){
+                            if (instruction[k].assessmentID == assessment[i].assessmentID)
+                                div(class="input-container text-center p-3 mb-3")
+                                    h1 Instructions
+                                    div(class="yellow-separation")
+                                    div(class="form-row")
+                                        div(class="form-group col-lg-12 p-3")
+                                            span #{instruction[k].instructions}
+
+
+                                //- div(class="container pt-5")
+                                //-     div(class="yellow-separation" style="margin-bottom: 20px;")
+                                //-     p #{instruction[k].instructions}
+                                //-     div(class="yellow-separation" style="margin-bottom: 20px;")
+                        - }
+                    
+                    div(class="input-container p-3 mb-3")
+                            h4(class="h3-yellow pl-3") #{qNum}
+                            div(class="yellow-separation")
+                            div(class="form-row ml-3")
+                                div(class="form-group col-lg-12 p-3")
+                                    h5(class="h6-yellow") #{assessment[i].question}
+                            - for (j in response) {
+                                if (assessment[i].assessmentID == response[j].assessmentID)
+                                    - assessNum = assessment[i].assessmentID;
+                                    - responseValue = response[j].value;
+                                    div(class="form-row ml-3 pb-2" )
+                                        if (responseValue == 0)
+                                            label(class="label-container" for="q#{i}r#{j}") #{response[j].value + ' - ' + response[j].response}
+                                                //- input(type="radio" id="q#{i}r#{j}" name="q#{i}" value="#{j}" checked="checked")
+                                                input(type="radio" id="q#{i}r#{j}" name="a#{assessNum}q#{i}" value="#{responseValue}" checked="checked")
+                                                span(class="checkmark")
+                                        else 
+                                            label(class="label-container" for="q#{i}r#{j}") #{response[j].value + ' - ' + response[j].response}
+                                                //- input(type="radio" id="q#{i}r#{j}" name="q#{i}" value="#{j}")
+                                                input(type="radio" id="q#{i}r#{j}" name="a#{assessNum}q#{i}" value="#{responseValue}")
+                                                span(class="checkmark")
+                            - }
+                    - qNum = qNum + 1
+                - }
+
+                
+                div(class="input-container text-center p-3 mb-3")
+                    h4(class="h3-yellow pl-3") Submit
+                    div(class="yellow-separation")
+                    div(class="form-row")
+                        div(class="form-group col-lg-12 p-3")
+                            if typeof(assessment) != 'undefined'
+                                span If you have answered all of the questions and are ready to submit, please press the button below.
+                    input(type="submit" class="btn btn-success btn-block")
+    
+    
+    
+    
+    
+    
+    
+    
+    //- form#secondAssessment
+    //-     // If there are no assessments to display
+    //-     if typeof(assessment) == 'undefined'
+    //-         div(class="container pt-5")
+    //-             div(class="yellow-separation" style="margin-bottom: 20px;")
+    //-             p Based on your answers from the previous assessment, you do not need to take any secondary assessments.  Please click the submit button to continue.
+    //-     // Create a variable for question numbers
+    //-     // The variable "i" created in the for loop starts at 0
+    //-     // Pug/Jade is a template language and doesn't do computations well
+    //-     - qNum = 1
+    //-     - for (i in assessment){
+    //-         - rowNum = (qNum - 1) % 2
+    //-         if assessment[i].questionID == 1
+    //-             - for (k in instruction){
+    //-                 if (instruction[k].assessmentID == assessment[i].assessmentID)
+    //-                     div(class="container pt-5")
+    //-                         div(class="yellow-separation" style="margin-bottom: 20px;")
+    //-                         p #{instruction[k].instructions}
+    //-                         div(class="yellow-separation" style="margin-bottom: 20px;")
+    //-             - }
+    //-         if rowNum == 1
+    //-             div(class="container-fluid p-0" style="background-color:#222222")
+    //-                 div(class="container p-3")
+    //-                     table
+    //-                         tr
+    //-                             td(colspan="2")
+    //-                                 h4(class="h3-yellow") Question #{qNum}
+    //-                         tr
+    //-                             td(colspan="2")
+    //-                                 h6(class="h6-yellow") #{assessment[i].question}
+    //-                         tr
+    //-                             td(colspan="2")
+    //-                                 table 
+    //-                                 - for (j in response){
+    //-                                     if (assessment[i].assessmentID == response[j].assessmentID)
+    //-                                         - assessNum = assessment[i].assessmentID;
+    //-                                         - responseValue = response[j].value;
+    //-                                         tr
+    //-                                             td(width="30px")
+    //-                                                 input(type="radio" id="q#{i}r#{j}" name="a#{assessNum}q#{i}" value="#{responseValue}")
+    //-                                             td
+    //-                                                 label(for="q#{i}r#{j}") #{response[j].value + ' - ' + response[j].response}
+    //-                                 - }
+    //-         else 
+    //-             div(class="container p-3")
+    //-                 table
+    //-                     tr
+    //-                         td(colspan="2")
+    //-                             h4(class="h3-yellow") Question #{qNum}
+    //-                     tr
+    //-                         td(colspan="2")
+    //-                             h6(class="h6-yellow") #{assessment[i].question}
+    //-                     tr
+    //-                         td(colspan="2")
+    //-                             table 
+    //-                             - for (j in response){
+    //-                                 if (assessment[i].assessmentID == response[j].assessmentID)
+    //-                                     - assessNum = assessment[i].assessmentID;
+    //-                                     - responseValue = response[j].value;
+    //-                                     tr
+    //-                                         td(width="30px")
+    //-                                             input(type="radio" id="q#{i}r#{j}" name="a#{assessNum}q#{i}" value="#{responseValue}")
+    //-                                         td
+    //-                                             label(for="q#{i}r#{j}") #{response[j].value + ' - ' + response[j].response}
+    //-                             - }
+    //-         - qNum = qNum + 1
+    //-     - }
+    //-     div(class="container p-3")
+    //-         input(type="submit")

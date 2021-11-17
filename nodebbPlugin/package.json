@@ -1,0 +1,14 @@
+{
+  "name": "nodebb-plugin-censorplugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "censor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "nbbpm": {
+    "compatibility": "^1.15.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

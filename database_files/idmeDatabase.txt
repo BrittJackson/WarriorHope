@@ -1,0 +1,20 @@
+CREATE DATABASE Idme;
+USE Idme;
+#
+CREATE TABLE user (
+    userID int NOT NULL,
+    username varchar(30) NOT NULL,
+    password varchar(30) NOT NULL,
+    veteran boolean NOT NULL,
+    access_code varchar(30) DEFAULT NULL,
+    PRIMARY KEY (userID)
+);
+# Add simple users for testing
+INSERT INTO user (userID, username, password, veteran)
+VALUES (1, 'vet', 'vet', 1);
+# Used to test that only veterans be approved
+INSERT INTO user (userID, username, password, veteran)
+VALUES (2, 'notvet', 'notvet', 0);
+# used to test an access_code 
+INSERT INTO user (userID, username, password, veteran, access_code)
+VALUES (3, 'donottuse', 'itllmessupaccesscode', 1, 'abc123');

@@ -1,0 +1,105 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+
+    title Warrior Hope | #{title}
+
+    block scripts
+      link(rel="icon" href="images/favicon/favicon.ico")
+      link(rel='stylesheet' href='stylesheets/bootstrapStyle.css')
+      link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Black+Ops+One")
+      link(rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous")
+  body(class="bg-dark")
+    // Header & Navbar
+    block navbar 
+      nav(class="navbar sticky-top navbar-expand-lg navbar-dark header-very-dark")
+        div(class="container")
+
+          // Left logo and home link
+          a(class="navbar-brand" href="/")
+            img(src="images/team-crystal-thin-yellow-100-warrior-hope-small.png")
+          button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation")
+            span(class="navbar-toggler-icon")
+
+          // Navbar links
+          div(class="collapse navbar-collapse" id="navbarsExample07")
+            ul(class="navbar-nav ml-auto")
+              
+              li(class="nav-item")
+                a(class="nav-link" href="/") Home
+              li(class="nav-item")
+                a(class="nav-link" href="/resources") Resources
+              li(class="nav-item")
+                a(class="nav-link" href="/volunteers") Volunteers
+              if loggedin
+                li(class="nav-item dropdown")
+                  a(class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-right: 1em; margin-right: .5em; border-right: 1px solid var(--yellow);")
+                    // TODO: Default image. Replace with user image eventually
+                    i(class="fas fa-user-circle" style="font-size: 1.75em; color: var(--yellow); vertical-align: middle;")
+                  div(class="dropdown-menu dropdown-menu-right dropdown-menu-user text-center" aria-labelledby="dropdown07")
+                    span(class="dropdown-item-text" id="username") #{username}
+                    div(class="dropdown-divider")
+                    a(class="dropdown-item" href="/chat") Live Chat
+                    div(class="dropdown-divider")
+                    a(class="dropdown-item" href="/userAccount") Account
+                    if moderator
+                      a(class="dropdown-item" href="/modReports") View All Reports
+                    a(class="dropdown-item" href="/userReports") View User Reports
+                    div(class="dropdown-divider")
+                    a(class="dropdown-item" href="/logout") 
+                      span(class="logout") Logout
+              else 
+                li(class="nav-item")
+                  a(class="nav-link" href="/signin")
+                    span(class="login login-primary") LOGIN
+                li(class="nav-item" style="padding-right: 1em; margin-right: .5em; border-right: 1px solid var(--yellow);")
+                  a(class="nav-link" href="/registration")
+                    span(class="login login-primary") REGISTER
+              li(class="nav-item")
+                a(class="nav-link" href="https://suicidepreventionlifeline.org/" data-toggle="tooltip" data-placement="bottom" title="EMERGENCY") 
+                  i(class="fas fa-phone" style="font-size: 1.75em; color: var(--red); vertical-align: middle;")
+              li(class="nav-item")
+                a(class="nav-link" href="https://findtreatment.samhsa.gov/locator" data-toggle="tooltip" data-placement="bottom" title="TREATMENT LOCATOR")
+                  i(class="fas fa-clinic-medical" style="font-size: 1.75em; color: var(--yellow); vertical-align: middle;")
+
+
+    // Large landing image
+    block landing
+      // If you want the large landing image, add it to the individual page
+      // div(style="position: relative;")
+      //   img(src="images/hope.jpg" class="img-fluid w-100" style="max-height: 500px; object-fit: cover;" alt="Responsive image")
+
+      // div(class="yellow-separation" style="margin-bottom: 20px;")
+
+
+    // Main space for page content
+    // WARNING 
+    // ALL CONTENT SHOULD BEGIN WITH
+    // div(style="container-fluid")
+    //   div(style="container")
+    block content
+
+    //footer area
+    block foot 
+      footer(class="footer-very-dark")
+        div(class="container")
+          span
+            p(class="text-center")
+              a(href="https://www.odu.edu" target="_blank" rel="noopener noreferrer") Old Dominion University 
+              span &nbsp | &nbsp
+              a(href="https://www.odu.edu/compsci" target="_blank" rel="noopener noreferrer") CS 411
+              span &nbsp | &nbsp Spring Team Crystal Copyright © 2021
+    
+    block footScript 
+      script(src="https://code.jquery.com/jquery-3.3.1.min.js")
+      script(src="js/popper.min.js")
+      script(src="js/bootstrap.min.js")
+      script.
+        $(function () {
+          $('[data-toggle="tooltip"]').tooltip()
+        })

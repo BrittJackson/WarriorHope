@@ -1,0 +1,23 @@
+{
+    "url": "",
+    "library": "./censor.js",
+    "staticDirs": {
+    
+    },
+    "less": [
+        "assets/style.less"
+    ],
+    "hooks": [
+        { "hook": "filter:topic.create", "method": "censorTopic" },
+        { "hook": "filter:topic.post", "method": "censor" },
+        { "hook": "filter:topic.reply", "method": "censor" }
+    ],
+    "scripts": [
+        ""
+    ],
+    "acpScripts": [
+        ""
+    ],
+    "languages": "",
+    "templates": ""
+}

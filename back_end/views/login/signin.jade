@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+  div(class="container-fluid")
+  div(class="container " style="text-align:center")
+    div(class="input-container p-3")
+      h1 Sign-in
+      form(id="signInForm" method="post" action="signin") 
+        div(class="form-box")
+          div(class="form-row")
+            div(class="form-group col-lg-12")
+              div(class="input-group")
+                div(class="input-group-prepend")
+                  span(class="input-group-text bg-primary boo text-dark") username
+                input(type="text" name="username" pattern="^[^\&\<\>\;\*\\s][a-zA-Z0-9\-\_]{6,50}$" class="form-control")
+          div(class="form-row")
+            div(class="form-group col-lg-12")
+              div(class="input-group")
+                div(class="input-group-prepend")
+                  span(class="input-group-text bg-primary boo text-dark") password
+                input(type="password" name="password" pattern="^[^\&\<\>\;\*\\s]{8,50}$" class="form-control")
+          div(class="form-row")
+            div(class="form-group col-lg-6")
+              input(name="action" id="submitButton" type="submit" value="Submit" class="btn btn-success btn-block")
+            div(class="form-group col-lg-6")
+              input(name="action" id="resetButton" type="submit" value="Forgot Password" class="btn btn-danger btn-block")
+          if emptyFields
+            div(class="alert alert-danger mt-3") Please enter username and password!
+          else if notInDatabase
+            div(class="alert alert-danger mt-3") Incorrect information entered! Please try again!

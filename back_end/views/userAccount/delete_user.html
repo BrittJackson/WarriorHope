@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Change Password</title>
+</head>
+
+<body>
+  <h1>Confirm Password to Delete Account</h1>
+  <form id="deleteAccount" method="post" action="deleteAccount" onsubmit="passwMatch(this)">
+    <div class="container">
+      <div class="form-box">
+        <label for="password"><b>Password</b></label>
+        <input type="password" name="password" pattern="^[^&<>;*\s]{8,50}$" required="" class="inputbox">
+        <label for="passwconfirm"><b>Confirm Password</b></label>
+        <input type="password" name="passwconfirm" pattern="^[^&<>;*\s]{8,50}$" required="" class="inputbox"><br><br>
+      </div>
+    </div>
+  <button type="submit" class="buttonbox3">Submit</button>
+  </form>
+
+
+
+  <script>
+    function passwMatch(passw) {
+      pass = passw.password.value;
+      passConfirm = passw.passwconfirm.value;
+      if (pass != passConfirm) {
+        alert("Passwords do not match. Please re-enter password.");
+        return false;
+      } else {
+        return true;
+      }
+    }
+  </script>
+</body>
+
+</html>

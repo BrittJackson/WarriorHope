@@ -1,0 +1,16 @@
+extends ../layout
+
+
+block content
+  div(class="container-fluid")
+    div(class="container" style="text-align:center")
+      div(class="input-container")
+        h1= 'Verify Service with IDme'
+        p Sign into ID.me to verify service history
+        
+        button(onclick='signInWithIDme()')
+          img(src='images/verify-with-idme-green.png', width = 256)
+        script. 
+          function signInWithIDme () {
+            window.location.replace("!{redirect}");
+          }

@@ -1,0 +1,287 @@
+##############################
+#-------- Assessments --------
+##############################
+#
+#
+# Assessment for "Self-Rated Level 1 Cross-Cutting Symptom Measure--Adult" --> https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/APA_DSM5_Level-1-Measure-Adult.pdf
+INSERT INTO assessment VALUES ('Self-Rated Level 1 Cross-Cutting Symptom Measure--Adult', 1, 68);
+# Domain I - Depression: Questions 1-2
+# Question 1
+INSERT INTO question VALUES (1, 1, 'Little interest or pleasure in doing things?');
+# Question 2
+INSERT INTO question VALUES (1, 2, 'Feeling down, depressed, or hopeless?');
+# Domain II - Anger: Question 3
+# Question 3
+INSERT INTO question VALUES (1, 3, 'Feeling more irritated, grouchy, or angry than usual?');
+# Domain III - Mania: Questions 4-5
+# Question 4
+INSERT INTO question VALUES (1, 4, 'Sleeping less than usual but still have a lot of energy?');
+# Question 5
+INSERT INTO question VALUES (1, 5, 'Starting a lot more projects than usual or doing more risky things than usual?'); 
+# Domain IV - Anxiety: Questions 6-8
+# Question 6
+INSERT INTO question VALUES (1, 6, 'Feeling nervous, anxious, frightened, worried, or on edge?');
+# Question 7
+INSERT INTO question VALUES (1, 7, 'Feeling panic or being frightened?');
+# Question 8
+INSERT INTO question VALUES (1, 8, 'Avoiding situations that make you anxious?');
+# Domain V - Somatic Symptoms: Questions 9-10
+# Question 9
+INSERT INTO question VALUES (1, 9, 'Unexplained aches and pains (e.g., head, back, joints, abdomen, legs)?');
+# Question 10
+INSERT INTO question VALUES (1, 10, 'Feeling that your illnesses are not being taken seriously enough?');
+# Domain VI - Suicide Ideation: Question 11
+# Question 11 - 
+INSERT INTO question VALUES (1, 11, 'Thoughts of actually hurting yourself?');
+# Domain VII - Sleep Problems: Question 12
+# Question 12
+INSERT INTO question VALUES (1, 12, 'Problems with sleep that affected your sleep quality overall?');
+# Domain VIII - Repetitive Thoughts and Behavior: Questions 13-14
+# Question 13
+INSERT INTO question VALUES (1, 13, 'Unpleasant thoughts, urges, or images that repeatedly enter your mind?');
+# Question 14
+INSERT INTO question VALUES (1, 14, 'Feeling driven to perform certain behaviors or mental acts over and over again?');
+# Domain IX - Substance Abuse: Questions 15-17
+# Question 15
+INSERT INTO question VALUES (1, 15, 'Drinking at least 4 drinks of any kind of alcohol in a single day?');
+# Question 16
+INSERT INTO question VALUES (1, 16, 'Smoking any cigarettes, a cigar, or pipe, or using snuff or chewing tobacco?');
+# Question 17
+INSERT INTO question VALUES (1, 17, 'Using any of the following medicines ON YOUR OWN, that is, without a doctor’s prescription, in greater amounts or longer than prescribed [e.g., painkillers (like Vicodin), stimulants (like Ritalin or Adderall), sedatives or tranquilizers (like sleeping pills or Valium), or drugs like marijuana, cocaine or crack, club drugs (like ecstasy), hallucinogens (like LSD), heroin, inhalants or solvents (like glue), or methamphetamine (like speed)]?');
+# Responses
+INSERT INTO response VALUES (1, 1, 0, 'Not at all');
+INSERT INTO response VALUES (1, 2, 1, 'Rare, less than a day or two');
+INSERT INTO response VALUES (1, 3, 2, 'Several days');
+INSERT INTO response VALUES (1, 4, 3, 'More than half the days');
+INSERT INTO response VALUES (1, 5, 4, 'Nearly every day');
+#
+#
+# Assessment for "Level 2-Depression-Adult (PROMIS Emotional Distress-Depression-Short Form)" --> https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/APA_DSM5_Level-2-Depression-Adult.pdf
+INSERT INTO assessment VALUES ('Level 2-Depression-Adult (PROMIS Emotional Distress-Depression-Short Form)', 2, 40);
+# Question 1
+INSERT INTO question VALUES (2, 1, 'I felt worthless.');
+# Question 2
+INSERT INTO question VALUES (2, 2, 'I felt that I had nothing to look forward to.');
+# Question 3
+INSERT INTO question VALUES (2, 3, 'I felt helpless.');
+# Question 4
+INSERT INTO question VALUES (2, 4, 'I felt sad.');
+# Question 5
+INSERT INTO question VALUES (2, 5, 'I felt like a failure.'); 
+# Question 6
+INSERT INTO question VALUES (2, 6, 'I felt depressed.');
+# Question 7
+INSERT INTO question VALUES (2, 7, 'I felt unhappy.');
+# Question 8
+INSERT INTO question VALUES (2, 8, 'I felt hopeless.');
+# Responses
+INSERT INTO response VALUES (2, 1, 0, 'Never');
+INSERT INTO response VALUES (2, 2, 1, 'Rarely');
+INSERT INTO response VALUES (2, 3, 2, 'Sometimes');
+INSERT INTO response VALUES (2, 4, 3, 'Often');
+INSERT INTO response VALUES (2, 5, 4, 'Always');
+#
+#
+# Assessment for "Level 2-Anger-Adult (PROMIS Emotional Distress-Anger-Short Form)" --> https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/APA_DSM5_Level-2-Anger-Adult.pdf
+INSERT INTO assessment VALUES ('Level 2-Depression-Adult (PROMIS Emotional Distress-Anger-Short Form)', 3, 25);
+# Question 1
+INSERT INTO question VALUES (3, 1, 'I was irritated more than people knew.');
+# Question 2
+INSERT INTO question VALUES (3, 2, 'I felt angry.');
+# Question 3
+INSERT INTO question VALUES (3, 3, 'I felt like I was ready to explode.');
+# Question 4
+INSERT INTO question VALUES (3, 4, 'I was grouchy.');
+# Question 5
+INSERT INTO question VALUES (3, 5, 'I felt annoyed.'); 
+# Responses
+INSERT INTO response VALUES (3, 1, 0, 'Never');
+INSERT INTO response VALUES (3, 2, 1, 'Rarely');
+INSERT INTO response VALUES (3, 3, 2, 'Sometimes');
+INSERT INTO response VALUES (3, 4, 3, 'Often');
+INSERT INTO response VALUES (3, 5, 4, 'Always');
+#
+#
+# Assessment for "Level 2-Mania-Adult (Altman Self-Rating Mania Scale [ASRM])" --> https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/APA_DSM5_Level-2-Mania-Adult.pdf
+INSERT INTO assessment VALUES ('Level 2-Mania-Adult (Altman Self-Rating Mania Scale [ASRM])', 4, 20);
+# Question 1
+INSERT INTO question VALUES (4, 1, 'Do you feel more cheerful than usual?');
+# Question 2
+INSERT INTO question VALUES (4, 2, 'Do you feel more confident than usual?');
+# Question 3
+INSERT INTO question VALUES (4, 3, 'Do you sleep less than usual?');
+# Question 4
+INSERT INTO question VALUES (4, 4, 'Do you talk more than usual?');
+# Question 5
+INSERT INTO question VALUES (4, 5, 'Are you more active than usual?');
+# Responses
+INSERT INTO response VALUES (4, 1, 0, 'Not at all');
+INSERT INTO response VALUES (4, 2, 1, 'Occasionally');
+INSERT INTO response VALUES (4, 3, 2, 'More than usual');
+INSERT INTO response VALUES (4, 4, 3, 'Most of the time');
+INSERT INTO response VALUES (4, 5, 4, 'All of the time');
+#
+#
+# Assessment for "Level 2-Anxiety-Adult (PROMIS Emotional Distress-Anxiety-Short Form) --> https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/APA_DSM5_Level-2-Anxiety-Adult.pdf
+INSERT INTO assessment VALUES ('Level 2-Anxiety-Adult (PROMIS Emotional Distress-Anxiety-Short Form)', 5, 35);
+# Question 1
+INSERT INTO question VALUES (5, 1, 'I felt fearful.');
+# Question 2
+INSERT INTO question VALUES (5, 2, 'I felt anxious.');
+# Question 3
+INSERT INTO question VALUES (5, 3, 'I felt worried.');
+# Question 4
+INSERT INTO question VALUES (5, 4, 'I found it hard to focus on anything other than my anxiety.');
+# Question 5
+INSERT INTO question VALUES (5, 5, 'I felt nervous.');
+# Question 6
+INSERT INTO question VALUES (5, 6, 'I felt uneasy.');
+# Question 7
+INSERT INTO question VALUES (5, 7, 'I felt tense.');
+# Responses
+INSERT INTO response VALUES (5, 1, 1, 'Never');
+INSERT INTO response VALUES (5, 2, 2, 'Rarely');
+INSERT INTO response VALUES (5, 3, 3, 'Sometimes');
+INSERT INTO response VALUES (5, 4, 4, 'Often');
+INSERT INTO response VALUES (5, 5, 5, 'Always');
+#
+#
+# Assessment for "Level 2-Somatic Symptom-Adult Patient" --> https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/APA_DSM5_Level-2-Somatic-Symptom-Adult.pdf
+INSERT INTO assessment VALUES ('Level 2-Somatic Symptom-Adult Patient', 6, 30);
+# Question 1
+INSERT INTO question VALUES (6, 1, 'Stomach pain');
+# Question 2
+INSERT INTO question VALUES (6, 2, 'Back pain');
+# Question 3
+INSERT INTO question VALUES (6, 3, 'Pain in your arms, legs, or joints (knees, hips, etc.)');
+# Question 4
+INSERT INTO question VALUES (6, 4, 'Menstrual cramps or other problems with your periods WOMEN ONLY');
+# Question 5
+INSERT INTO question VALUES (6, 5, 'Headaches');
+# Question 6
+INSERT INTO question VALUES (6, 6, 'Chest pain');
+# Question 7
+INSERT INTO question VALUES (6, 7, 'Dizziness');
+# Question 8
+INSERT INTO question VALUES (6, 8, 'Fainting spells');
+# Question 9
+INSERT INTO question VALUES (6, 9, 'Feeling your heart pound or race');
+# Question 10
+INSERT INTO question VALUES (6, 10, 'Shortness of breath');
+# Question 11
+INSERT INTO question VALUES (6, 11, 'Pain or problems during sexual intercourse');
+# Question 12
+INSERT INTO question VALUES (6, 12, 'Constipation, loose bowels, or diarrhea');
+# Question 13
+INSERT INTO question VALUES (6, 13, 'Nausea, gas, or indigestion');
+# Question 14
+INSERT INTO question VALUES (6, 14, 'Feeling tired or having low energy');
+# Question 15
+INSERT INTO question VALUES (6, 15, 'Trouble sleeping');
+# Responses
+INSERT INTO response VALUES (6, 1, 0, 'Not bothered at all');
+INSERT INTO response VALUES (6, 2, 1, 'Bothered a little');
+INSERT INTO response VALUES (6, 3, 2, 'Bothered a lot');
+#
+#
+# Assessment for "Suicide Ideation-Patient Health Questionnaire-9" --> https://www.mdcalc.com/phq-9-patient-health-questionnaire-9
+INSERT INTO assessment VALUES ('Suicide Ideation-Patient Health Questionnaire-9', 7, 27);
+# Question 1
+INSERT INTO question VALUES (7, 1, 'Little interest or pleasure in doing things?');
+# Question 2
+INSERT INTO question VALUES (7, 2, 'Feeling down, depressed, or hopeless?');
+# Question 3
+INSERT INTO question VALUES (7, 3, 'Trouble falling or staying asleep, or sleeping too much?');
+# Question 4
+INSERT INTO question VALUES (7, 4, 'Feeling tired or having little energy?');
+# Question 5
+INSERT INTO question VALUES (7, 5, 'Poor appetite or overeating?');
+# Question 6
+INSERT INTO question VALUES (7, 6, 'Feeling bad about yourself--or that you are a failure or have let yourself or your family down?');
+# Question 7
+INSERT INTO question VALUES (7, 7, 'Trouble concentrating on things, such as reading the newspaper or watching television?');
+# Question 8
+INSERT INTO question VALUES (7, 8, 'Moving or speaking so slowly that other people could have noticed? Or so fidgety or restless that you have been moving a lot more than usual?');
+# Question 9
+INSERT INTO question VALUES (7, 9, 'Thoughts that you would be better off dead, or thoughts of hurting yourself in some way?');
+# Responses
+INSERT INTO response VALUES (7, 1, 0, 'Not at all');
+INSERT INTO response VALUES (7, 2, 1, 'Several days');
+INSERT INTO response VALUES (7, 3, 2, 'More than half the days');
+INSERT INTO response VALUES (7, 4, 3, 'Nearly every day');
+#
+#
+# Assessment for "Level 2-Sleep Disturbance-Adult" --> https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/APA_DSM5_Level-2-Sleep-Disturbance-Adult.pdf
+INSERT INTO assessment VALUES ('Level 2-Sleep Disturbance-Adult', 8, 40);
+# Question 1
+INSERT INTO question VALUES (8, 1, 'My sleep was restless.');
+# Question 2
+INSERT INTO question VALUES (8, 2, 'I was not satisfied with my sleep.');
+# Question 3
+INSERT INTO question VALUES (8, 3, 'My sleep not was refreshing.');
+# Question 4
+INSERT INTO question VALUES (8, 4, 'I had difficulty sleeping.');
+# Question 5
+INSERT INTO question VALUES (8, 5, 'I had trouble staying asleep.');
+# Question 6
+INSERT INTO question VALUES (8, 6, 'I had trouble sleeping.');
+# Question 7
+INSERT INTO question VALUES (8, 7, 'I did not get enough sleep.');
+# Question 8
+INSERT INTO question VALUES (8, 8, 'My sleep quality was poor.');
+# Responses
+INSERT INTO response VALUES (8, 1, 1, 'Never');
+INSERT INTO response VALUES (8, 2, 2, 'Rarely');
+INSERT INTO response VALUES (8, 3, 3, 'Sometimes');
+INSERT INTO response VALUES (8, 4, 4, 'Often');
+INSERT INTO response VALUES (8, 5, 5, 'Always');
+#
+#
+# Assessment for "Level 2-Repetitive Thoughts and Behaviors-Adult" --> https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/APA_DSM5_Level-2-Repetitive-Thoughts-and-Behaviors-Adult.pdf
+INSERT INTO assessment VALUES ('Level 2-Repetitive Thoughts and Behaviors-Adult', 9, 20);
+# Question 1
+INSERT INTO question VALUES (9, 1, 'On average, how much time is occupied by these thoughts or behaviors each day?');
+# Question 2
+INSERT INTO question VALUES (9, 2, 'How much distress do these thoughts or behaviors cause you?');
+# Question 3
+INSERT INTO question VALUES (9, 3, 'What level of difficulty would you attribute to your ability to control these thoughts or behaviors?');
+# Question 4
+INSERT INTO question VALUES (9, 4, 'How much do these thoughts or behaviors cause you to avoid doing anything, going anyplace, or being with anyone?');
+# Qusetion 5
+INSERT INTO question VALUES (9, 5, 'How much do these thoughts or behaviors interfere with school, work, or your social or family life?');
+# Responses
+INSERT INTO response VALUES (9, 1, 0, 'None');
+INSERT INTO response VALUES (9, 2, 1, 'Mild');
+INSERT INTO response VALUES (9, 3, 2, 'Moderate');
+INSERT INTO response VALUES (9, 4, 3, 'Severe');
+INSERT INTO response VALUES (9, 5, 4, 'Extreme');
+#
+#
+# Assessment for "Level 2-Substance Use-Adult" --> https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/APA_DSM5_Level-2-Substance-Use-Adult.pdf
+INSERT INTO assessment VALUES ('Level 2-Substance Use-Adult', 10, 40);
+# Question 1
+INSERT INTO question VALUES (10, 1, 'Painkillers (like Vicodin)');
+# Question 2
+INSERT INTO question VALUES (10, 2, 'Stimulants (like Ritalin, Adderall)');
+# Question 3
+INSERT INTO question VALUES (10, 3, 'Sedatives or tranquilizers (like sleeping pills or Valium)');
+# Question 4
+INSERT INTO question VALUES (10, 4, 'Marijuana');
+# Question 5
+INSERT INTO question VALUES (10, 5, 'Cocaine or crack');
+# Question 6
+INSERT INTO question VALUES (10, 6, 'Club drugs (like ecstasy)');
+# Question 7
+INSERT INTO question VALUES (10, 7, 'Hallucinogens (like LSD)');
+# Question 8
+INSERT INTO question VALUES (10, 8, 'Heroin');
+# Question 9
+INSERT INTO question VALUES (10, 9, 'Inhalants or solvents (like glue)');
+# Question 10
+INSERT INTO question VALUES (10, 10, 'Methamphetamine (like speed)');
+# Responses
+INSERT INTO response VALUES (10, 1, 0, 'Not at all');
+INSERT INTO response VALUES (10, 2, 1, 'One or two days');
+INSERT INTO response VALUES (10, 3, 2, 'Several days');
+INSERT INTO response VALUES (10, 4, 3, 'More than half the days');
+INSERT INTO response VALUES (10, 5, 4, 'Nearly every day');

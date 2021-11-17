@@ -1,0 +1,58 @@
+extends ../layout
+
+block append scripts
+    script(href='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+    script(type='text/javascript' src='js/processInitialAssessment.js')
+
+block content
+  div(class="container-fluid")
+    div(class="container " style="text-align:center")
+      div(class="input-container")
+        form#formNewUser(name="newuser", method="POST", action="/registration")
+          div(class="form-box p-3") 
+            div(class="form-row")
+              div(class="form-group col-lg-12")
+                h1 Registration
+                p Please enter the following information:
+            div(class="form-row")
+              div(class="form-group col-lg-12")
+                span Username: Minimum characters: #{usernameMin}
+            div(class="form-row")
+              div(class="form-group col-lg-6")
+                div(class="input-group")
+                  div(class="input-group-prepend")
+                    span(class="input-group-text bg-primary boo text-dark") username
+                  input#input(type="text", name="username", pattern="^[^\&\<\>\;\*\\s][a-zA-Z0-9\-\_]{6,50}$", value="", class="form-control")
+              div(class="form-group col-lg-6")
+                div(class="input-group")
+                  div(class="input-group-prepend")
+                    span(class="input-group-text bg-primary boo text-dark") email
+                  input#input(type="text", name="email", value="", pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}", class="form-control")
+            div(class="form-row")
+              div(class="form-group col-lg-12")
+                span Password: Minimum characters: #{passwordMin}
+            div(class="form-row")
+              div(class="form-group col-lg-6")
+                div(class="input-group")
+                  div(class="input-group-prepend")
+                    span(class="input-group-text bg-primary boo text-dark") password
+                  input#input(type="password", name="password", value="", pattern="^[^\&\<\>\;\*\\s]{8,50}$", class="form-control")   
+              div(class="form-group col-lg-6")
+                div(class="input-group")
+                  div(class="input-group-prepend")
+                    span(class="input-group-text bg-primary boo text-dark") confirm
+                  input#input(type="password", name="confirm", value="", pattern="^[^\&\<\>\;\*\\s]{7,51}$", class="form-control")
+            div(class="form-row")
+              div(class="form-group col-lg-12") 
+                //- input#input(type="hidden", name="eula", value="0")
+                input#input(type="checkbox", name="eula", value="1")
+                label I agree to the #[a(href="/terms" target="_blank") terms of service]
+            div(class="form-row")
+              div(class="form-group col-lg-12")
+                input(id="submitButton", type="submit", value="Submit" class="btn btn-success btn-block")
+            div(class="form-row")
+              div(class="form-group col-lg-12")
+                input(type="hidden", name="code", value="#{code}")
+
+            if msg 
+              div(class="alert alert-danger mt-3") #{msg}
